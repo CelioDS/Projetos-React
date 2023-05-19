@@ -1,0 +1,9 @@
+export default function Contatos(){
+    return (
+        <div>
+            <h1>Contatos</h1>
+            <p>Conteudo da pagina</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum labore ullam sint quidem. Impedit pariatur culpa maxime modi amet tempora ducimus voluptatem aliquid recusandae vero accusamus nemo ipsam, exercitationem deserunt molestiae. Vitae quae expedita, est facere inventore molestias repudiandae natus explicabo cum a voluptatibus commodi minus amet, tempora ipsam? Architecto labore ex rem hic iste corrupti facere repudiandae deserunt nostrum aut cum nemo nam perspiciatis, facilis incidunt! Impedit enim atque illo quo quis tempore, minima corporis nobis. Magni sequi praesentium dicta itaque qui odio optio est officia, deleniti eos molestias at quis! Accusantium modi quibusdam non molestiae omnis quas, similique expedita voluptatum nulla! Vitae, quam nemo? Voluptatum corrupti voluptas eos temporibus debitis eveniet magnam laudantium provident placeat animi quia tenetur facere ab asperiores, est officia, reprehenderit recusandae consequatur doloribus similique nostrum mollitia ea! Facere voluptatem hic praesentium alias ut, reprehenderit obcaecati error aperiam sequi eaque quis quae harum doloremque dolorem possimus porro et blanditiis consequatur temporibus tempore nihil aspernatur nulla sed provident! Eos maiores architecto autem dicta sapiente omnis voluptatibus, neque pariatur necessitatibus deleniti vel nesciunt laboriosam aliquid illo dolor temporibus esse voluptatum eaque nulla soluta aperiam dolorum magni quis corrupti. Nostrum officiis modi aspernatur similique placeat debitis iusto veniam?</p>
+        </div>
+    )
+}

@@ -1,0 +1,23 @@
+.form {
+  width: 100%;
+  margin: 2em 0;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  background-color: #222;
+  color: #fff;
+  padding: 0.4em 1em;
+  text-decoration: none;
+  font-size: 14px;
+}
+.button:hover {
+  color: #ffbb33;
+}
+
+.area_btn {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

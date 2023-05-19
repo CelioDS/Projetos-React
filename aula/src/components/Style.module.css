@@ -1,0 +1,28 @@
+body {
+  background-color: white;
+  align-items: center;
+  text-align: center;
+}
+div {
+  background-color: rgb(128, 128, 128);
+  border: 10px solid white;
+  width: 500px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: blue;
+}
+
+button,
+input[type=submit]{
+  padding: 15px;
+  border-radius: 8px;
+  margin: 5px;
+}
+input{
+  padding: 15px;
+  outline: none;
+  border-radius: 8px;
+  margin: 5px;
+}

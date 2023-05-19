@@ -1,0 +1,100 @@
+.father {
+  text-align: center;
+  width: 100%;
+  height: auto;
+
+
+}
+.father .texto {
+  margin: 30px 20px 30px;
+  text-align: start;
+}
+.father .texto h1 {
+  color: rgb(56, 55, 55);
+  margin-bottom: 30px;
+}
+.father .texto p {
+  color: #888585;
+}
+
+.father a {
+  display: flex;
+  justify-content: start;
+  width: 100%;
+  gap: 10px;
+  font-weight: bolder;
+  color: #055346;
+  text-decoration: none;
+}
+.father a > .icon {
+  color: rgb(17, 0, 255);
+  font-size: 20px;
+  filter: drop-shadow(1px 1px 1px #000000);
+}
+.father table {
+  color: #ffffff;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #000000;
+  position: relative;
+  border-collapse: collapse;
+  text-align: justify;
+  margin-bottom: 400px;
+}
+
+.father table th {
+  background-color: #18181d;
+  height: 50px;
+  font-weight: bolder;
+  text-align: justify;
+  padding: 0 15px;
+}
+.father table tr:nth-child(even) {
+  background-color: rgb(191, 197, 157);
+}
+.father table tr:nth-child(odd) {
+  background-color: rgb(233, 238, 207);
+}
+
+.father table td {
+  min-height: 30px;
+  color: #807b7b;
+  padding: 10px 15px;
+}
+
+.contatos {
+  display: flex;
+  position: relative;
+  align-items: start;
+  gap: 10px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: #424242;
+  border: transparent;
+  border-radius: 3px;
+  cursor: pointer;
+  filter: drop-shadow(1px 1px 1px #000000);
+}
+.copy {
+  display: none;
+  position: absolute;
+  top: -35px;
+  z-index: 100;
+  background-color: #ffffff;
+  padding: 5px;
+  border-radius: 8px;
+}
+.btn:hover > .copy {
+  display: flex;
+}
+
+.btn:hover {
+  color: #0400ff;
+  border: 2px solid #00ccff91;
+}

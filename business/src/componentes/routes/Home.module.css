@@ -1,0 +1,9 @@
+.father {
+  min-height: calc(100vh - 130px);
+  text-align: center;
+}
+
+.father h1 {
+  color: #070af1;
+  text-shadow: 5px 7px 2px #ff5100;
+}

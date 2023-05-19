@@ -1,0 +1,22 @@
+.father {
+  min-height: calc(100vh - 130px);
+  text-align: center;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-self: center;
+  width: 100px;
+  max-width: 100%;
+  margin: 50px auto;
+  padding: 10px 16px;
+  background-color: rgba(0, 0, 0, 0.822);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+.btn:hover {
+  color: aqua;
+}

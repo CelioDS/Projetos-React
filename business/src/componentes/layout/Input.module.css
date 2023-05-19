@@ -1,0 +1,26 @@
+.father {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 300px;
+  max-width: 100%;
+  margin: 0 auto;
+  gap: 10px;
+  margin: 10px auto;
+}
+.father > label {
+  color: #000000;
+  text-align: start;
+  font-weight: bolder;
+}
+.father > input {
+  color: #000000;
+  width: 300px;
+  padding: 8px;
+  outline: none;
+}
+.father > input::placeholder {
+  color: #9e9b9b;
+  padding: 18px;
+  text-align: center;
+}

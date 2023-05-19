@@ -1,0 +1,23 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+.input{
+  height: 38px;
+  border-radius: 8px;
+  max-width: 300px;
+  width: 100%;
+  margin: 24px 0;
+  padding: 8px;
+  outline: none;
+  border: 1px solid #bbb;
+}

@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+  padding: 40px 0;
+  width: 100%;
+  background-color: blueviolet;
+  max-height: 400px;
+}
+.menu {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.menu h3 {
+  color: wheat;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+.texto {
+  text-transform: uppercase;
+}
+
+.form {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  margin: 10px auto;
+  text-align: center;
+}
+.form input[type="text"] {
+  width: 48%;
+  height: 30px;
+  margin: 8px 2px;
+  padding-left: 10px;
+}
+.form input[type="submit"] {
+  width: 97%;
+  height: 40px;
+  background-color: rgb(143, 143, 143);
+  cursor: pointer;
+  border: 0;
+  font-size: 18px;
+  border-radius: 8px;
+}
+.conteudo {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap; /*se nao couber ele pular*/
+}
+
+.conteudo-single {
+  width: 48%;
+  margin-top: 10px;
+  background-color: #ccc;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .form input[type="text"],
+  .form input[type="submit"]{
+    width: 100%;
+  }
+  .conteudo {
+    flex-direction: column;
+  }
+  .conteudo-single{
+    width: 80%;
+    margin: 10px auto ;
+  }
+}
