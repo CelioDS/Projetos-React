@@ -2,6 +2,7 @@
   text-align: center;
   width: 100%;
   height: auto;
+  min-height: calc(100vh - 165px);
 
 
 }
