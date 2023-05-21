@@ -1,7 +1,8 @@
 .father {
   background-color: rgb(255, 255, 255);
   margin: 0 auto;
-  height: calc(100vh - 135px);
+
+  min-height: calc(100vh - 135px);
 }
 .father > h1 {
   text-align: center;

@@ -68,8 +68,8 @@ export default function Visualizar() {
                   <tr key={id}>
                     <td>{id}</td>
                     <td>
-                      <Link to={`/visualizar/${id}/${nome}`} key={id}>
-                        <BsLink className={style.icon} />
+                      <Link to={`/visualizar/${id}/${nome}`} key={id} title="Acesse aqui">
+                        <BsLink className={style.icon} title="Acesse aqui" />
                         {nome}
                       </Link>
                     </td>

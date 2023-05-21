@@ -55,7 +55,7 @@ export default function Cadastrar() {
   return (
     <Container>
       <div className={style.father}>
-        <h1>Cadastrar</h1>
+        <h1>Cadastre novas empresas</h1>
         <form onSubmit={handleSubmitForm}>
           {/* Componente de entrada de texto para o nome da empresa */}
           <Input

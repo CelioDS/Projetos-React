@@ -8,10 +8,33 @@ export default function NavBar() {
   const colorBtn = "white";
   const [isMobile, setIsMobile] = useState(false);
   const [closeMenu, setCloseMenu] = useState(false);
+  const [stylesCss, setStylesCss] = useState(false);
+  const [stylesCss1, setStylesCss1] = useState(null);
 
   function openMenu() {
-    setCloseMenu(!closeMenu);
-    
+    if (closeMenu) {
+      setTimeout(() => {
+        setCloseMenu(!closeMenu);
+      }, 885);
+    } else {
+      setCloseMenu(!closeMenu);
+    }
+
+    setStylesCss(!stylesCss);
+
+    if (stylesCss1 !== null) {
+      setStylesCss1(!stylesCss1);
+    } else {
+      setStylesCss1(false);
+    }
+  }
+
+  function setButton() {
+  return  closeMenu ? (
+      <BsXLg color={colorBtn} size={sizeBtn} />
+    ) : (
+      <BsList color={colorBtn} size={sizeBtn} />
+    )
   }
 
   // Verificar se está em um dispositivo móvel
@@ -38,16 +61,23 @@ export default function NavBar() {
         <nav>
           <h1>BusinessHere</h1>
           {isMobile && (
-            <button className={styles.MenuBtn} onClick={openMenu}>
-              {closeMenu ? (
-                <BsXLg color={colorBtn} size={sizeBtn} />
-              ) : (
-                <BsList color={colorBtn} size={sizeBtn} />
-              )}
+            <button
+              className={`${styles.MenuBtn}
+               ${stylesCss ? styles.actives : ""} 
+               ${stylesCss ? "" : styles.activesInverso}`}
+              onClick={() => setTimeout(openMenu, 500)}
+            >
+              {setButton()}
             </button>
           )}
-          {isMobile && closeMenu && (
-            <ul className={styles.menuH}>
+          {isMobile && (
+            <ul
+              className={`${styles.menuH}
+               ${stylesCss ? styles.expandir : null}
+               ${!stylesCss1 ? null : styles.expandirInverso}
+              
+           `}
+            >
               <Link onClick={openMenu} className="btn" to="/">
                 Inicio
               </Link>

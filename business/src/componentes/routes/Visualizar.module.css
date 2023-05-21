@@ -2,12 +2,10 @@
   text-align: center;
   width: 100%;
   height: auto;
-  min-height: calc(100vh - 165px);
-
-
+  min-height: calc(100vh - 135px);
 }
 .father .texto {
-  margin: 30px 20px 30px;
+  padding: 50px;
   text-align: start;
 }
 .father .texto h1 {

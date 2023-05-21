@@ -1,3 +1,7 @@
+:root {
+  --velocidadeMenu: 1s;
+}
+
 nav {
   background-color: #b9a367a1;
   height: 60px;
@@ -62,13 +66,44 @@ nav > ul > a:hover:before {
   font-size: 30px;
   cursor: pointer;
   border: none;
-  background-color: rgba(163, 159, 159, 0);
-  filter: drop-shadow(1px 1px 3px rgb(224, 61, 12));
+  background-color: initial;
+  filter: drop-shadow(1px 1px 3px rgb(8, 8, 8));
+}
+.MenuBtn.actives {
+  animation: rotate var(--velocidadeMenu) linear;
+  animation-fill-mode: forwards; /* Mantém o último quadro da animação */
+}
+.MenuBtn.activesInverso {
+  animation: rotateInverso var(--velocidadeMenu) linear;
+  animation-fill-mode: forwards; /* Mantém o último quadro da animação */
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateInverso {
+  100% {
+    transform: rotate(-360deg);
+  }
+  50% {
+    transform: rotate(-180deg);
+  }
+  0% {
+    transform: rotate(0deg);
+  }
 }
 
 @media (max-width: 900px) {
-  nav > ul {
-    display: none;
+  .menuH a {
+    color: #ffffff;
   }
   .menuH {
     display: flex;
@@ -78,9 +113,37 @@ nav > ul > a:hover:before {
     position: absolute;
     top: 60px;
     right: 0;
-    width: 80%;
-    height: auto;
-    z-index: 100;
-    background-color: #cc8463;
+    width: 70%;
+    height: 0;
+    background-color: rgb(187, 161, 161);
+    overflow: hidden;
+  }
+
+  .menuH.expandir {
+    animation: expandir var(--velocidadeMenu) linear;
+    height: 150px;
+  }
+  .menuH.expandirInverso {
+    animation: expandirInverso var(--velocidadeMenu) linear;
+    height: 0px;
+  }
+
+  @keyframes expandir {
+    0% {
+      height: 0;
+    }
+
+    100% {
+      height: 150px;
+    }
+  }
+  @keyframes expandirInverso {
+    0% {
+      height: 150px;
+    }
+
+    100% {
+      height: 0px;
+    }
   }
 }

@@ -2,7 +2,7 @@
   "usuarios": [
     {
       "id": 1,
-      "nome": "Cbp",
+      "nome": "Csdbp",
       "localidade": "Jardim alvorada",
       "contatos": "12345678911",
       "setor": "fabril",
@@ -12,7 +12,7 @@
     },
     {
       "id": 2,
-      "nome": "Gvs ",
+      "nome": "Gdsavs ",
       "localidade": "Jardim progresso",
       "contatos": "19989051210",
       "setor": "industrial",
@@ -32,7 +32,7 @@
     },
     {
       "id": 4,
-      "nome": "Bosch",
+      "nome": "Bsdossch",
       "localidade": "botafrogo",
       "contatos": "19989058345",
       "setor": "fabril",

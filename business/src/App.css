@@ -4,3 +4,6 @@
   box-sizing: border-box;
   font-family: system-ui, sans-serif;
 }
+body{
+  background-color: #f8f7f7;
+}

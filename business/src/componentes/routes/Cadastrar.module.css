@@ -2,6 +2,13 @@
   min-height: calc(100vh - 135px);
   text-align: center;
 }
+.father h1 {
+  color: #8b8888;
+}
+
+.father form {
+  margin-top: 50px;
+}
 
 .btn {
   display: flex;
@@ -18,5 +25,5 @@
   cursor: pointer;
 }
 .btn:hover {
-  color: aqua;
+  color: rgb(255, 187, 0);
 }

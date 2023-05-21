@@ -4,6 +4,19 @@
 }
 
 .father h1 {
+  text-align: start;
   color: #070af1;
   text-shadow: 5px 7px 2px #ff5100;
+}
+.father h2 {
+  font-size: 38px;
+}
+.father p {
+  color: #6b5e5e;
+}
+.father img{
+  margin: 50px 0;
+  border-radius: 8px;
+  width: 300px;
+  height: 200px;
 }
