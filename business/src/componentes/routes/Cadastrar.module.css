@@ -3,7 +3,7 @@
   text-align: center;
 }
 .father h1 {
-  color: #8b8888;
+  color: #1f1e1d;
 }
 
 .father form {
@@ -19,11 +19,11 @@
   max-width: 100%;
   margin: 50px auto;
   padding: 10px 16px;
-  background-color: rgba(0, 0, 0, 0.822);
+  background-color: #1f1e1d;
   color: #ffffff;
   border: none;
   cursor: pointer;
 }
 .btn:hover {
-  color: rgb(255, 187, 0);
+  color: #ff9900;
 }

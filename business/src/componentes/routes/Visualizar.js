@@ -37,7 +37,7 @@ export default function Visualizar() {
 
   const handleCopy = (text) => {
     navigator.clipboard.writeText(text);
-    setCopy("Copiou");
+    setCopy("Copiando...");
     setTimeout(() => {
       setCopy("Copiar");
     }, 500);
@@ -53,27 +53,33 @@ export default function Visualizar() {
         </div>
 
         {database ? ( // Se os dados foram obtidos com sucesso
-          <div>
+          <div className={style.tablediv}>
             <table>
               <thead>
                 <tr>
                   <th>Id</th>
                   <th>Nomes</th>
                   <th>Localidade</th>
+                  <th>Setor</th>
                   <th>Contatos</th>
                 </tr>
               </thead>
               <tbody>
-                {database.map(({ id, nome, localidade, contatos }) => (
+                {database.map(({ id, nome, localidade, contatos, setor }) => (
                   <tr key={id}>
                     <td>{id}</td>
                     <td>
-                      <Link to={`/visualizar/${id}/${nome}`} key={id} title="Acesse aqui">
+                      <Link
+                        to={`/visualizar/${id}/${nome}`}
+                        key={id}
+                        title="Acesse aqui"
+                      >
                         <BsLink className={style.icon} title="Acesse aqui" />
                         {nome}
                       </Link>
                     </td>
                     <td>{localidade}</td>
+                    <td>{setor}</td>
                     <td className={style.contatos}>
                       {ContatosMascara(contatos)}
                       <button

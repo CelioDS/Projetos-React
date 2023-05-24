@@ -5,7 +5,11 @@
   z-index: 2;
   overflow: hidden;
   margin-top: 30px;
+
+  text-decoration: 1px underline #ff9900;
+  color: #1f1e1d;
 }
+
 .btn:hover:before {
   content: "";
   text-align: center;
@@ -17,8 +21,8 @@
   animation: hoverButton 1s linear infinite;
   z-index: 1;
   transform: rotate(-45deg);
-  border-left: 2px solid #f80202;
-  border-top: 2px solid #f80202;
+  border-left: 2px solid #ff9900;
+  border-top: 2px solid #ff9900;
 }
 
 @keyframes hoverButton {

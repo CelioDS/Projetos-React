@@ -30,11 +30,11 @@ export default function NavBar() {
   }
 
   function setButton() {
-  return  closeMenu ? (
+    return closeMenu ? (
       <BsXLg color={colorBtn} size={sizeBtn} />
     ) : (
       <BsList color={colorBtn} size={sizeBtn} />
-    )
+    );
   }
 
   // Verificar se está em um dispositivo móvel
@@ -59,15 +59,19 @@ export default function NavBar() {
     <div className={styles.div}>
       <main>
         <nav>
-          <h1>BusinessHere</h1>
+          <h1 className={styles.logo}>BusinessHere</h1>
           {isMobile && (
             <button
               className={`${styles.MenuBtn}
                ${stylesCss ? styles.actives : ""} 
                ${stylesCss ? "" : styles.activesInverso}`}
-              onClick={() => setTimeout(openMenu, 500)}
+              onClick={() => setTimeout(openMenu, 1000)}
             >
-              {setButton()}
+              {setButton() && closeMenu ? (
+                <BsXLg color={colorBtn} size={sizeBtn} />
+              ) : (
+                <BsList color={colorBtn} size={sizeBtn} />
+              )}
             </button>
           )}
           {isMobile && (

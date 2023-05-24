@@ -25,7 +25,6 @@ const VisualizarDB = () => {
         });
         const data = await response.json(); // Converte a resposta em formato JSON
         setDatabase(data); // Atualiza o estado 'database' com os dados recebidos
-        console.log(data);
       } catch (error) {
         console.log("Erro ao obter os dados", error);
       }
@@ -41,9 +40,7 @@ const VisualizarDB = () => {
         <h1>
           Informações completas:
           <br />
-          <span>
-            {` ${nome}`}-{id}
-          </span>
+          <span>{` ${nome}`}</span>
         </h1>
 
         {database &&
@@ -60,7 +57,7 @@ const VisualizarDB = () => {
             }) => {
               if (id === idNumber) {
                 return (
-                  <section>
+                  <section key={id}>
                     <div key={id} className={style.info}>
                       <p>
                         <span>name:</span> {nome}
