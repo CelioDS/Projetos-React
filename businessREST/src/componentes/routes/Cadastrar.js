@@ -1,7 +1,6 @@
 import style from "./Cadastrar.module.css";
 import Container from "../layout/Container";
 import Input from "../layout/Input";
-import dblocal from "../bd/databaseLocal.json";
 import { useState } from "react";
 
 export default function Cadastrar() {
@@ -48,7 +47,6 @@ export default function Cadastrar() {
 
       // Atualiza o estado do formulário com os dados recebidos
       setFormData(data);
-      dblocal.append(formData);
     } catch (error) {
       console.log(error);
     }

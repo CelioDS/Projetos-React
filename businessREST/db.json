@@ -2,7 +2,7 @@
   "usuarios": [
     {
       "id": 1,
-      "nome": "Csdbp",
+      "nome": "Csdbp json Serve",
       "localidade": "Jardim alvorada",
       "contatos": "12345678911",
       "setor": "fabril",
@@ -49,24 +49,7 @@
       "visao": " Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an",
       "fundada": "2017",
       "imagem": "https://breistech.com.br/wp-content/uploads/2022/12/0x0-1-1024x620.jpg"
-    },
-    {
-      "id": 6,
-      "nome": "Celio",
-      "localidade": "1",
-      "contatos": "89058345",
-      "setor": "Sda",
-      "visao": "1",
-      "fundada": "1"
-    },
-    {
-      "id": 7,
-      "nome": "1",
-      "localidade": "1",
-      "contatos": "89058345",
-      "setor": "Sda",
-      "visao": "1",
-      "fundada": "1"
     }
+    
   ]
 }

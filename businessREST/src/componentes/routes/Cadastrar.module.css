@@ -1,0 +1,29 @@
+.father {
+  min-height: calc(100vh - 135px);
+  text-align: center;
+}
+.father h1 {
+  color: #1f1e1d;
+}
+
+.father form {
+  margin-top: 50px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-self: center;
+  width: 100px;
+  max-width: 100%;
+  margin: 50px auto;
+  padding: 10px 16px;
+  background-color: #1f1e1d;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+.btn:hover {
+  color: #ff9900;
+}

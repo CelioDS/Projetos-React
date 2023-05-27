@@ -1,0 +1,74 @@
+.father {
+  background-color: rgb(255, 255, 255);
+  margin: 0 auto;
+  min-height: calc(100vh - 135px);
+}
+.father > h1 {
+  text-align: center;
+  color: #1f1e1d;
+  border-bottom: 1px solid rgb(136, 119, 126);
+  max-width: 70%;
+  margin: 30px auto;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+}
+.father > h1 > span {
+  text-align: center;
+  font-weight: bolder;
+  color: #ff9900;
+}
+.father > section > div > p:first-letter {
+  text-transform: uppercase;
+}
+.father > section > div > p {
+  color: #7c7c7c;
+  font-weight: normal;
+}
+.father > section > div > p > span {
+  text-align: center;
+  color: #1f1e1d;
+  font-weight: bold;
+}
+.father > section > div > p > span:first-letter {
+  text-transform: uppercase;
+}
+
+.info {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px; /* O novo nome para a propriedade grid-gap */
+  justify-items: last baseline; /* Centraliza horizontalmente dentro das células */
+  padding: 0 50px;
+}
+
+figure {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 50px;
+  background-color: #818181;
+  border-radius: 8px;
+}
+figure > figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #ffffff;
+  filter: drop-shadow(5px 5px 3px #000000);
+  mix-blend-mode: overlay;
+  font-size: 108px;
+}
+
+.imagem {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  margin-top: 50px;
+}
+.imagem img {
+  width: 300px;
+  height: 200px;
+  border-radius: 8px;
+}
