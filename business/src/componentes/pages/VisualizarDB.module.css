@@ -19,6 +19,7 @@
 }
 .father > section > div > p:first-letter {
   text-transform: uppercase;
+  padding: 0;
 }
 .father > section > div > p {
   color: #7c7c7c;
@@ -34,12 +35,47 @@
 }
 
 .info {
-  width: 100%;
+  background-color: rgb(233, 230, 230);
+  border-radius: 15px;
+  width: 98%;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px; /* O novo nome para a propriedade grid-gap */
-  justify-items: last baseline; /* Centraliza horizontalmente dentro das células */
-  padding: 0 50px;
+  grid-template-columns: 1fr 1fr; /* Duas colunas com a mesma largura */
+  grid-template-rows: auto;
+  gap: 20px;
+}
+.info p:last-child {
+  margin: 0 auto;
+  width: 100%;
+  background-color: rgb(194, 185, 185);
+  grid-column: 1 / span 2;
+  text-align: center;
+}
+
+.info > p {
+  padding: 10px;
+}
+
+.info li {
+  list-style: none;
+  margin-left: 5px;
+}
+.info li::before {
+  list-style: none;
+  content: "•";
+  color: #ff9900;
+  margin-right: 5px;
+}
+
+.info .site a {
+  color: inherit;
+}
+.info .fundador {
+  color: #ff9900;
+}
+.info .idade {
+  padding-left: 5px;
+  color: #686363;
 }
 
 figure {
@@ -52,12 +88,13 @@ figure {
 }
 figure > figcaption {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: -50px;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: #ffffff;
   filter: drop-shadow(5px 5px 3px #000000);
   mix-blend-mode: overlay;
-  font-size: 108px;
+  font-size: 58px;
 }
 
 .imagem {
@@ -71,4 +108,35 @@ figure > figcaption {
   width: 300px;
   height: 200px;
   border-radius: 8px;
+}
+
+.btnCopy {
+  background-color: #ffffff;
+  cursor: pointer;
+  border: 1px solid #8b8888;
+  padding: 1px;
+  border-radius: 5px;
+  filter: drop-shadow(1px 1px 3px #00000091);
+  margin-left: 10px;
+}
+.copy {
+  display: none;
+  position: absolute;
+  top: -29px;
+  right: 20px;
+  z-index: 100;
+  background-color: inherit;
+  padding: 5px;
+  border-radius: 8px;
+  filter: inherit;
+}
+
+.btnCopy:hover > .copy {
+  display: flex;
+}
+
+.btnCopy:hover {
+  filter: drop-shadow(2px 2px 2px #ff730091);
+  color: #ff730091;
+  background-color: #332c2c;
 }

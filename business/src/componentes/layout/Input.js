@@ -7,6 +7,7 @@ export default function Input({
   placeholder,
   value,
   handleChange,
+  className,
 }) {
   return (
     <div className={style.father}>
@@ -18,8 +19,14 @@ export default function Input({
         placeholder={placeholder}
         value={value}
         onChange={handleChange}
+        className={className}
         required
       />
     </div>
   );
 }
+
+Input.defaultProps = {
+  //valores padroa
+  className: style.father,
+};

@@ -1,7 +1,7 @@
 import style from "./Cadastrar.module.css";
 import Container from "../layout/Container";
 import Input from "../layout/Input";
-import dblocal from "../bd/databaseLocal.json";
+import dblocal from "../bd/db.json";
 import { useState } from "react";
 
 export default function Cadastrar() {
@@ -10,17 +10,21 @@ export default function Cadastrar() {
     id: "",
     nome: "",
     localidade: "",
-    contatos: "",
+    site: "",
     setor: "",
     visao: "",
-    fundada: "",
+    Fundador: "",
+    anofundação: "",
+    valores: "",
+    produtos: "",
+    imagem: "",
   });
 
   const [btnText, setBtnTexto] = useState("Enviar");
 
   // Atualiza o estado do formulário quando um campo é alterado
   const handleChange = (event) => {
-    if (event.target.value === "contatos") {
+    if (event.target.value === "site") {
       setFormData({ ...formData, [event.target.name]: event.target.value });
     } else {
       const capitalizedValue =
@@ -35,7 +39,7 @@ export default function Cadastrar() {
     try {
       setBtnTexto("Enviando...");
       // Envia uma requisição POST para a URL especificada
-      const response = await fetch("http://localhost:5000/usuarios", {
+      const response = await fetch("http://localhost:5000/empresas", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -58,7 +62,7 @@ export default function Cadastrar() {
     <Container>
       <div className={style.father}>
         <h1>Cadastre novas empresas</h1>
-        <form onSubmit={handleSubmitForm}>
+        <form onSubmit={handleSubmitForm} className={style.form}>
           {/* Componente de entrada de texto para o nome da empresa */}
           <Input
             text="Nome da empresa:"
@@ -70,14 +74,14 @@ export default function Cadastrar() {
             handleChange={handleChange}
           />
 
-          {/* Componente de entrada de texto para os contatos */}
+          {/* Componente de entrada de texto para os site */}
           <Input
-            text="Contatos:"
-            placeholder="Digite os contatos (00) 12345 6789"
-            type="number"
-            id="contatos"
-            name="contatos"
-            value={formData.contatos}
+            text="site:"
+            placeholder="Digite os site "
+            type="text"
+            id="site"
+            name="site"
+            value={formData.site}
             handleChange={handleChange}
           />
 
@@ -115,13 +119,44 @@ export default function Cadastrar() {
           />
 
           {/* Componente de entrada de texto para a data de fundação */}
+          {/* arruma esse campo de data e fundador*/}
+
           <Input
-            text="Fundação:"
-            type="number"
+            text="Fundador:"
+            type="text"
             placeholder="Digite o ano da fundação..."
-            id="fundada"
-            name="fundada"
+            id="Fundador"
+            name="Fundador"
             value={formData.fundada}
+            handleChange={handleChange}
+          />
+          <Input
+            text="data de  fundação"
+            type="date"
+            placeholder="Digite o ano da fundação..."
+            id="anofundação"
+            name="anofundação"
+            value={formData.anofundação}
+            handleChange={handleChange}
+            className={style.data}
+          />
+
+          <Input
+            text="valores:"
+            type="text"
+            placeholder="Digite os valores..."
+            id="valores"
+            name="valores"
+            value={formData.valores}
+            handleChange={handleChange}
+          />
+          <Input
+            text="produtos:"
+            type="text"
+            placeholder="Digite os produtos..."
+            id="produtos"
+            name="produtos"
+            value={formData.produtos}
             handleChange={handleChange}
           />
 

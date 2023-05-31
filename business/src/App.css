@@ -4,6 +4,13 @@
   box-sizing: border-box;
   font-family: system-ui, sans-serif;
 }
-body{
+body {
   background-color: #f8f7f7;
+}
+
+*::first-letter {
+  text-transform: capitalize;
+}
+p::first-letter {
+  padding-left: 15px ;
 }

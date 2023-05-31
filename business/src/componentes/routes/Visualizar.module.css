@@ -1,3 +1,7 @@
+:root {
+  --paddindTabela: 15px;
+}
+
 .father {
   text-align: center;
   width: 100%;
@@ -40,19 +44,18 @@
 /* tabela  */
 
 .father table {
-  display: inline-block;
-  max-width: 96%;
-  margin: 0 auto; /* Centraliza a tabela horizontalmente */
+  width: 96%;
+  margin: 0 auto;
   color: #ffffff;
   border-collapse: collapse; /* Remove a separação entre as células da tabela */
-  text-align: justify;
+  text-align: start;
   margin-bottom: 50px;
   overflow-x: scroll; /* Adiciona uma barra de rolagem horizontal quando necessário */
 }
 .father table td {
-  min-height: 30px;
+  height: 35px;
   color: #807b7b;
-  padding: 10px 15px;
+  padding: 0 var(--paddindTabela);
 }
 
 .father table th {
@@ -60,7 +63,7 @@
   height: 50px;
   font-weight: bolder;
   text-align: justify;
-  padding: 0 15px;
+  padding: 0 var(--paddindTabela);
 }
 
 .father table tr:nth-child(even) {
@@ -70,12 +73,24 @@
   background-color: rgb(233, 238, 207);
 }
 
-/* tabela  */
-.contatos {
+/***
+
+// tabela
+
+
+.site {
   display: flex;
   position: relative;
   align-items: start;
   gap: 10px;
+  font-size: 15px;
+  font-weight: normal !important;
+  color: #6b6a6a !important;
+}
+.site > a {
+  font-weight: normal !important;
+  border: none !important;
+  filter: none !important;
 }
 
 .btn {
@@ -110,3 +125,6 @@
   color: #ff730091;
   background-color: #1f1e1d;
 }
+
+
+********/
