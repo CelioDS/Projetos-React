@@ -1,35 +1,86 @@
 .father {
   min-height: calc(100vh - 135px);
   text-align: center;
+  display: flex;
+  position: relative;
+  flex-direction: column;
 }
 
 .father h1 {
+  padding: 30px;
   text-align: center;
   color: #1f1e1d;
-  text-shadow: 5px 7px 3px #ff9900;
-}
-.father h2 {
-  font-size: 38px;
 }
 .father p {
+  text-align: start;
   color: #6b5e5e;
+  padding-left: 15px;
 }
-.father img {
+.father .header {
+  display: grid;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-area: 100px;
+  gap: 10px;
+  text-align: center;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center;
+}
+
+.father .header > div {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.father .header > div > p {
   margin: 50px 0;
   border-radius: 8px;
-  width: 300px;
+  font-size: 25px;
+  text-align: justify;
+}
+
+.father .header > div > img {
+  margin: 50px 0;
+  border-radius: 8px;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  transition: all 2s;
+  user-select: none;
+  animation: color-rotate 2s infinite alternate;
+  background-color: #000000;
+}
+
+.father .btn {
+  position: absolute;
+  padding: 15px;
+  right: 0;
+  font-size: 20px;
+}
+
+.father .logo {
+  display: flex;
+  position: relative;
+  width: 70px;
   height: 200px;
+  border-radius: 50%;
   cursor: pointer;
 }
-.father img:hover {
-  animation: color-rotate 2s infinite alternate;
+.father .logo:hover {
+  animation: color-rotate 2s infinite linear;
 }
 
 @keyframes color-rotate {
   from {
     filter: hue-rotate(0deg);
+
+    filter: drop-shadow(5px 5px 5px rgb(255, 0, 0));
   }
   to {
     filter: hue-rotate(360deg);
+
+    filter: drop-shadow(5px 5px 5px rgb(0, 4, 255));
   }
 }

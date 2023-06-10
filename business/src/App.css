@@ -12,5 +12,15 @@ body {
   text-transform: capitalize;
 }
 p::first-letter {
-  padding-left: 15px ;
+  padding-left: 15px;
+}
+
+p {
+  font-size: 15px;
+  font-size: clamp(14px, 15px, 16px);
+}
+
+h1 {
+  font-size: 25px;
+  font-size: clamp(20px, 25px, 30px);
 }

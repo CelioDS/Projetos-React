@@ -1,117 +1,91 @@
 import styles from "./NavBar.module.css";
-import { Link } from "react-router-dom";
+
 import { BsList, BsXLg } from "react-icons/bs";
-import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { useEffect, useState, useCallback } from "react";
+
 import LinkButton from "../layout/LinkButton";
+import CheckMobile from "../Funcoes/CheckMobile";
 
 export default function NavBar() {
+  const checkMobile = useCallback(CheckMobile, []);
+  const isMobile = checkMobile();
+
   const sizeBtn = 36;
   const colorBtn = "white";
-  const [isMobile, setIsMobile] = useState(false);
-  const [closeMenu, setCloseMenu] = useState(false);
-  const [stylesCss, setStylesCss] = useState(false);
-  const [stylesCss1, setStylesCss1] = useState(null);
+
+  const [iconMenu, setIconMenu] = useState();
+
+  const [menuUp, setMenuUp] = useState(false);
+  const [menuDown, setMenuDown] = useState(null);
+  const [MenuOpen, setMenuOpen] = useState(false);
 
   function openMenu() {
-    if (closeMenu) {
-      setTimeout(() => {
-        setCloseMenu(!closeMenu);
-      }, 885);
-    } else {
-      setCloseMenu(!closeMenu);
-    }
+    // Inverte o valor de MenuOpen
+    setMenuOpen((prevState) => !prevState);
 
-    setStylesCss(!stylesCss);
+    setMenuUp(!menuUp);
 
-    if (stylesCss1 !== null) {
-      setStylesCss1(!stylesCss1);
+    if (menuDown !== null) {
+      // Inverte o valor de menuDown
+      setMenuDown((prevState) => !prevState);
     } else {
-      setStylesCss1(false);
+      setMenuDown(false);
     }
   }
 
-  function setButton() {
-    return closeMenu ? (
-      <BsXLg color={colorBtn} size={sizeBtn} />
-    ) : (
-      <BsList color={colorBtn} size={sizeBtn} />
-    );
-  }
-
-  // Verificar se está em um dispositivo móvel
-  const checkMobile = () => {
-    setIsMobile(window.matchMedia("(max-width: 900px)").matches);
-    setCloseMenu(false);
-  };
-
-  // Verificar se a janela é alterada
   useEffect(() => {
-    // Chamar a função checkMobile quando o componente é montado
-    checkMobile();
+    if (!MenuOpen) {
+      setIconMenu(<BsList color={colorBtn} size={sizeBtn} />);
+    } else {
+      setIconMenu(<BsXLg color={colorBtn} size={sizeBtn} />);
+    }
+  }, [MenuOpen]);
 
-    // Adicionar um listener para o evento "resize" da janela
-    window.addEventListener("resize", checkMobile);
-
-    // Remover o listener quando o componente é desmontado
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
+  // Sempre que isMobile mudar, reajusta o estado
+  useEffect(() => {
+    if (!isMobile) {
+      setMenuOpen(false);
+      setMenuUp(null);
+      setMenuDown(null);
+    }
+  }, [isMobile]);
 
   return (
     <div className={styles.div}>
       <main>
         <nav>
-          <LinkButton
-            to="/"
-            text="BusinessHere"
-            className={styles.logo}
-          />
+          <LinkButton to="/" text="BusinessHere" className={styles.logo} />
 
+          {/*ativa o MenuMobile*/}
           {isMobile && (
             <button
               className={`${styles.MenuBtn}
-               ${stylesCss ? styles.actives : ""} 
-               ${stylesCss ? "" : styles.activesInverso}`}
-              onClick={() => setTimeout(openMenu, 1000)}
+               ${menuUp ? styles.actives : ""} 
+               ${menuUp ? "" : styles.activesInverso}`}
+              onClick={openMenu}
             >
-              {setButton() && closeMenu ? (
-                <BsXLg color={colorBtn} size={sizeBtn} />
-              ) : (
-                <BsList color={colorBtn} size={sizeBtn} />
-              )}
+              {iconMenu}
             </button>
           )}
-          {isMobile && (
-            <ul
-              className={`${styles.menuH}
-               ${stylesCss ? styles.expandir : null}
-               ${!stylesCss1 ? null : styles.expandirInverso}
-              
+
+          <ul
+            className={`
+               ${styles.menuH}
+               ${menuUp ? styles.expandir : null}
+               ${!menuDown ? null : styles.expandirInverso}
            `}
-            >
-              <Link onClick={openMenu} className="btn" to="/">
-                Inicio
-              </Link>
-              <Link onClick={openMenu} className="btn" to="/cadastrar">
-                Cadastrar
-              </Link>
-              <Link onClick={openMenu} className="btn" to="/visualizar">
-                Visualizar
-              </Link>
-            </ul>
-          )}
-          {!isMobile && (
-            <ul>
-              <Link className="btn" to="/">
-                Inicio
-              </Link>
-              <Link className="btn" to="/cadastrar">
-                Cadastrar
-              </Link>
-              <Link className="btn" to="/visualizar">
-                Visualizar
-              </Link>
-            </ul>
-          )}
+          >
+            <Link onClick={openMenu} className="btn" to="/">
+              Inicio
+            </Link>
+            <Link onClick={openMenu} className="btn" to="/visualizar">
+              Empresas
+            </Link>
+            <Link onClick={openMenu} className="btn" to="/cadastrar">
+              Cadastrar
+            </Link>
+          </ul>
         </nav>
       </main>
     </div>

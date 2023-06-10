@@ -14,14 +14,14 @@
 .father p {
   text-align: start;
   color: #6b5e5e;
-  padding-left: 15px;
+  padding: 15px;
 }
 .father .header {
   display: grid;
   position: relative;
   height: 100%;
   width: 100%;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-area: 100px;
   gap: 10px;
   text-align: center;
@@ -38,7 +38,11 @@
   margin: 50px 0;
   border-radius: 8px;
   font-size: 25px;
-  text-align: justify;
+  text-align: center;
+}
+
+.text {
+  columns: auto 10rem;
 }
 
 .father .header > div > img {

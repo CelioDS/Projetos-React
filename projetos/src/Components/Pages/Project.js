@@ -39,8 +39,8 @@ export default function Project() {
   // estado que controla a exibição do formulário de edição do projeto
   const [showProjectForm, setShowProjectForm] = useState(false);
 
-  const [mensagem, setMensagem] = useState();
-  const [type, setType] = useState();
+ 
+  
 
   // função que valida o orçamento e faz a requisição PATCH para atualizar o projeto na API
   function editPost(project) {

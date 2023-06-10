@@ -1,10 +1,13 @@
-const express = require("express");
+const jsonServer = require('json-server');
+const server = jsonServer.create();
+const router = jsonServer.router('db.json');
+const middlewares = jsonServer.defaults();
 
-const app = express();
-const port = process.env.PORT || 5001;
+server.use(middlewares);
+server.use(router);
 
-app.get("/api/mensagem", (req, res) => {
-  res.send({ express: "Hello From Express" });
+const port = 5000; // Porta que a API vai utilizar
+
+server.listen(port, () => {
+  console.log(`JSON Server está rodando na porta ${port}`);
 });
-
-app.listen(port, () => console.log(`Listening on port ${port}`));

@@ -3,14 +3,53 @@
   margin: 0 auto;
   min-height: calc(100vh - 135px);
 }
+
+.father > .btn {
+  padding: 8px 15px;
+  display: flex;
+  position: absolute;
+  z-index: 2;
+  overflow: hidden;
+  margin-top: 30px;
+  text-decoration: 1px underline #ff9900;
+  color: #1f1e1d;
+}
+
+.father > .btn:hover:before {
+  content: "";
+  text-align: center;
+  position: absolute;
+  bottom: 2px;
+  left: -100%;
+  width: 5px;
+  height: 5px;
+  animation: hoverButton 1s linear infinite;
+  z-index: 1;
+  transform: rotate(-45deg);
+  border-left: 2px solid #ff9900;
+  border-top: 2px solid #ff9900;
+}
+
+@keyframes hoverButton {
+  from {
+    left: 100%;
+  }
+  50% {
+  }
+  to {
+    left: -100%;
+  }
+}
+
 .father > h1 {
   text-align: center;
   color: #1f1e1d;
   border-bottom: 1px solid rgb(136, 119, 126);
   max-width: 70%;
-  margin: 30px auto;
+  margin: 0 auto;
   margin-bottom: 30px;
   padding-bottom: 15px;
+  padding-top: 30px;
 }
 .father > h1 > span {
   text-align: center;
@@ -34,26 +73,50 @@
   text-transform: uppercase;
 }
 
+.btnCrud {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.btnCrud button {
+  padding: 10px 16px;
+  border: 1px solid #1f1e1d;
+  color: #ffffff;
+  background-color: #1f1e1d;
+  cursor: pointer;
+  width: 100px;
+}
+
+.btnCrud button:hover {
+  color: #ff9900;
+  border: 1px solid #ff9900;
+}
+
 .info {
-  background-color: rgb(233, 230, 230);
+  background-color: rgb(94, 102, 89);
   border-radius: 15px;
   width: 98%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Duas colunas com a mesma largura */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-template-rows: auto;
   gap: 20px;
-}
-.info p:last-child {
-  margin: 0 auto;
-  width: 100%;
-  background-color: rgb(194, 185, 185);
-  grid-column: 1 / span 2;
-  text-align: center;
 }
 
 .info > p {
   padding: 10px;
+  color: rgb(255, 255, 255);
+}
+.info > p > span {
+  color: rgb(195, 199, 195);
+}
+.info p:last-child {
+  margin: 0 auto;
+  width: 100%;
+  background-color: rgb(48, 47, 47);
+  grid-column: 1 / span 2;
+  text-align: center;
 }
 
 .info li {
@@ -76,6 +139,12 @@
 .info .idade {
   padding-left: 5px;
   color: #686363;
+}
+
+@media (max-width: 650px) {
+  .info p:last-child {
+    grid-column: 1 / span 1;
+  }
 }
 
 figure {
@@ -118,6 +187,7 @@ figure > figcaption {
   border-radius: 5px;
   filter: drop-shadow(1px 1px 3px #00000091);
   margin-left: 10px;
+  cursor: copy;
 }
 .copy {
   display: none;

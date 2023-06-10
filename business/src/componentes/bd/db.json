@@ -4,91 +4,146 @@
       "id": 1,
       "nome": "Microsoft",
       "localidade": "Redmond, Washington, EUA",
-      "site": "https://www.microsoft.com",
+      "site": "Https://www.microsoft.com",
       "setor": "Tecnologia da Informação",
       "visao": "Empoderar cada pessoa e cada organização no planeta a conquistar mais.",
       "fundador": "Bill Gates",
       "anofundação": "1975-04-04",
       "imagem": "https://celiotech.netlify.app/img/microsoft.png",
-      "valores": ["Inovação", "Diversidade", "Responsabilidade"],
-      "produtos": ["Windows", "Office", "Azure", "Xbox"]
+      "valores": [
+        "Inovação",
+        "Diversidade",
+        "Responsabilidade"
+      ],
+      "produtos": [
+        "Windows",
+        "Office",
+        "Azure",
+        "Xbox"
+      ]
     },
     {
       "id": 2,
-      "nome": "Apple Inc.",
+      "nome": "Apple ",
       "localidade": "Cupertino, Califórnia, EUA",
-      "site": "https://www.apple.com",
+      "site": "Https://www.apple.com",
       "setor": "Tecnologia da Informação",
       "visao": "Contribuir para o mundo criando ferramentas para a mente que impulsionem a humanidade.",
       "fundador": "Steve Jobs, Steve Wozniak e Ronald Wayne",
       "anofundação": "1976-04-01",
       "imagem": "https://celiotech.netlify.app/img/apple.webp",
-      "valores": ["Inovação", "Simplicidade", "Design"],
-      "produtos": ["iPhone", "Mac", "iPad", "Apple Watch"]
+      "valores": [
+        "Inovação",
+        "Simplicidade",
+        "Design"
+      ],
+      "produtos": [
+        "iPhone",
+        "Mac",
+        "iPad",
+        "Apple Watch"
+      ]
     },
     {
       "id": 3,
       "nome": "IBM",
       "localidade": "Armonk, Nova Iorque, EUA",
-      "site": "https://www.ibm.com",
+      "site": "Https://www.ibm.com",
       "setor": "Tecnologia da Informação",
       "visao": "Ser a organização mais inovadora do mundo na criação de soluções e plataformas cognitivas que transformem indústrias e profissões.",
       "fundador": "Charles Ranlett Flint",
       "anofundação": "1911-06-16",
       "imagem": "https://celiotech.netlify.app/img/ibm.webp",
-      "valores": ["Inovação", "Confiança", "Responsabilidade"],
-      "produtos": ["IBM Watson", "IBM Cloud", "IBM Power Systems"]
+      "valores": [
+        "Inovação",
+        "Confiança",
+        "Responsabilidade"
+      ],
+      "produtos": [
+        "IBM Watson",
+        "IBM Cloud",
+        "IBM Power Systems"
+      ]
     },
     {
       "id": 4,
       "nome": "Google",
       "localidade": "Mountain View, Califórnia, EUA",
-      "site": "https://www.google.com",
+      "site": "Https://www.google.com",
       "setor": "Tecnologia da Informação",
       "visao": "Organizar as informações do mundo e torná-las universalmente acessíveis e úteis.",
       "fundador": "Larry Page e Sergey Brin",
       "anofundação": "1998-09-04",
       "imagem": "https://celiotech.netlify.app/img/google.jpg",
-      "valores": ["Foco no usuário", "Inovação", "Integridade"],
-      "produtos": ["Google Search", "Google Maps", "YouTube", "Google Cloud"]
+      "valores": [
+        "Foco no usuário",
+        "Inovação",
+        "Integridade"
+      ],
+      "produtos": [
+        "Google Search",
+        "Google Maps",
+        "YouTube",
+        "Google Cloud"
+      ]
     },
     {
       "id": 5,
       "nome": "Amazon",
       "localidade": "Seattle, Washington, EUA",
-      "site": "https://www.amazon.com",
+      "site": "Https://www.amazon.com",
       "setor": "Tecnologia da Informação",
       "visao": "Ser a empresa mais centrada no cliente do planeta, onde os clientes possam encontrar e descobrir qualquer coisa que queiram comprar online.",
       "fundador": "Jeff Bezos",
       "anofundação": "1994-07-05",
       "imagem": "https://celiotech.netlify.app/img/amazon.jpg",
-      "valores": ["Obsessão pelo cliente", "Inovação", "Longo prazo"],
-      "produtos": ["Amazon Prime", "Kindle", "Amazon Web Services"]
+      "valores": [
+        "Obsessão pelo cliente",
+        "Inovação",
+        "Longo prazo"
+      ],
+      "produtos": [
+        "Amazon Prime",
+        "Kindle",
+        "Amazon Web Services"
+      ]
     },
     {
       "id": 6,
       "nome": "Facebook",
       "localidade": "Menlo Park, Califórnia, EUA",
-      "site": "https://www.facebook.com",
+      "site": "Https://www.facebook.com",
       "setor": "Tecnologia da Informação",
       "visao": "Dar poder às pessoas para construir comunidades e aproximar o mundo.",
       "fundador": "Mark Zuckerberg, Eduardo Saverin, Andrew McCollum, Dustin Moskovitz e Chris Hughes",
       "anofundação": "2004-02-04",
       "imagem": "https://celiotech.netlify.app/img/facebook.webp",
-      "valores": ["Conexão", "Inovação", "Transparência"],
-      "produtos": ["Facebook", "Instagram", "WhatsApp"]
+      "valores": [
+        "Conexão",
+        "Inovação",
+        "Transparência"
+      ],
+      "produtos": [
+        "Facebook",
+        "Instagram",
+        "WhatsApp"
+      ]
     },
     {
       "id": 7,
       "nome": "Intel",
       "localidade": "Santa Clara, Califórnia, EUA",
-      "site": "https://www.intel.com",
+      "site": "Https://www.intel.com",
       "setor": "Tecnologia da Informação",
       "visao": "Criar e expandir a tecnologia da computação para conectar e enriquecer a vida de cada pessoa na Terra.",
       "fundador": "Robert Noyce e Gordon Moore",
       "anofundação": "1968-07-18",
       "imagem": "https://celiotech.netlify.app/img/intel.jpg",
-      "valores": ["Liderança", "Inovação", "Responsabilidade"],
+      "valores": [
+        "Liderança",
+        "Inovação",
+        "Responsabilidade"
+      ],
       "produtos": [
         "Processadores Intel",
         "Tecnologias de memória",
@@ -97,28 +152,41 @@
     },
     {
       "id": 8,
-      "nome": "Samsung Electronics",
+      "nome": "Samsung ",
       "localidade": "Suwon, Coreia do Sul",
-      "site": "https://www.samsung.com",
+      "site": "Https://www.samsung.com",
       "setor": "Tecnologia da Informação",
       "visao": "Inspirar o mundo com inovações transformadoras, criando novas possibilidades para pessoas e sociedade.",
       "fundador": "Lee Byung-chul",
       "anofundação": "1969-03-01",
       "imagem": "https://celiotech.netlify.app/img/samsung.jpg",
-      "valores": ["Criatividade", "Parceria", "Gratidão"],
-      "produtos": ["Smartphones", "TVs", "Eletrodomésticos", "Chips de memória"]
+      "valores": [
+        "Criatividade",
+        "Parceria",
+        "Gratidão"
+      ],
+      "produtos": [
+        "Smartphones",
+        "TVs",
+        "Eletrodomésticos",
+        "Chips de memória"
+      ]
     },
     {
       "id": 9,
-      "nome": "Oracle Corporation",
+      "nome": "Oracle ",
       "localidade": "Redwood City, Califórnia, EUA",
-      "site": "https://www.oracle.com",
+      "site": "Https://www.oracle.com",
       "setor": "Tecnologia da Informação",
       "visao": "Tornar a TI mais simples para os clientes, proporcionando inovação de classe mundial.",
       "fundador": "Larry Ellison, Bob Miner e Ed Oates",
       "anofundação": "1977-06-16",
       "imagem": "https://celiotech.netlify.app/img/oracle.jpg",
-      "valores": ["Inovação", "Excelência", "Integridade"],
+      "valores": [
+        "Inovação",
+        "Excelência",
+        "Integridade"
+      ],
       "produtos": [
         "Banco de dados Oracle",
         "Sistemas de gerenciamento de dados",
@@ -127,19 +195,126 @@
     },
     {
       "id": 10,
-      "nome": "Cisco Systems",
+      "nome": "Cisco ",
       "localidade": "San Jose, Califórnia, EUA",
-      "site": "https://www.cisco.com",
+      "site": "Https://www.cisco.com",
       "setor": "Tecnologia da Informação",
       "visao": "Mudar a forma como as pessoas se conectam, se comunicam e colaboram.",
       "fundador": "Leonard Bosack e Sandy Lerner",
       "anofundação": "1984-12-10",
       "imagem": "https://celiotech.netlify.app/img/cisco.jpg",
-      "valores": ["Integridade", "Inovação", "Sustentabilidade"],
+      "valores": [
+        "Integridade",
+        "Inovação",
+        "Sustentabilidade"
+      ],
       "produtos": [
         "Equipamentos de rede",
         "Soluções de segurança",
         "Colaboração e vídeo"
+      ]
+    },
+    {
+      "id": 11,
+      "nome": "Tesla",
+      "localidade": "Palo Alto, Califórnia, EUA",
+      "site": "https://www.tesla.com",
+      "setor": "Tecnologia da Informação",
+      "visao": "Acelerar a transição mundial para a energia sustentável.",
+      "fundador": "Elon Musk, JB Straubel, Martin Eberhard, Marc Tarpenning e Ian Wright",
+      "anofundação": "2003-07-01",
+      "imagem": "https://celiotech.netlify.app/img/tesla.jpg",
+      "valores": [
+        "Sustentabilidade",
+        "Inovação",
+        "Design"
+      ],
+      "produtos": [
+        "Carros elétricos",
+        "Baterias de armazenamento",
+        "Painéis solares"
+      ]
+    },
+    {
+      "id": 12,
+      "nome": "Adobe",
+      "localidade": "San Jose, Califórnia, EUA",
+      "site": "https://www.adobe.com",
+      "setor": "Tecnologia da Informação",
+      "visao": "Mudar o mundo por meio de experiências digitais.",
+      "fundador": "John Warnock e Charles Geschke",
+      "anofundação": "1982-12-01",
+      "imagem": "https://celiotech.netlify.app/img/adobe.jpg",
+      "valores": [
+        "Honestidade",
+        "Excelência",
+        "Envolver-se"
+      ],
+      "produtos": [
+        "Adobe Photoshop",
+        "Adobe Illustrator",
+        "Adobe Premiere Pro"
+      ]
+    },
+    {
+      "id": 13,
+      "nome": "Netflix",
+      "localidade": "Los Gatos, Califórnia, EUA",
+      "site": "https://www.netflix.com",
+      "setor": "Tecnologia da Informação",
+      "visao": "Tornar-se a melhor experiência de entretenimento do mundo.",
+      "fundador": "Reed Hastings e Marc Randolph",
+      "anofundação": "1997-08-29",
+      "imagem": "https://celiotech.netlify.app/img/netflix.jpg",
+      "valores": [
+        "Inovação",
+        "Diversidade",
+        "Inclusão"
+      ],
+      "produtos": [
+        "Streaming de filmes e séries",
+        "Produção de conteúdo original"
+      ]
+    },
+    {
+      "id": 14,
+      "nome": "Spotify",
+      "localidade": "Estocolmo, Suécia",
+      "site": "https://www.spotify.com",
+      "setor": "Tecnologia da Informação",
+      "visao": "Tornar-se a plataforma de áudio número um do mundo.",
+      "fundador": "Daniel Ek e Martin Lorentzon",
+      "anofundação": "2006-04-23",
+      "imagem": "https://celiotech.netlify.app/img/spotify.jpg",
+      "valores": [
+        "Inovação",
+        "Diversidade",
+        "Paixão"
+      ],
+      "produtos": [
+        "Streaming de música",
+        "Podcasts"
+      ]
+    },
+    {
+      "id": 15,
+      "nome": "HP",
+      "localidade": "Palo Alto, Califórnia, EUA",
+      "site": "https://www.hp.com",
+      "setor": "Tecnologia da Informação",
+      "visao": "Criar tecnologia que melhore a vida de todos, em todos os lugares.",
+      "fundador": "Bill Hewlett e Dave Packard",
+      "anofundação": "1939-01-01",
+      "imagem": "https://celiotech.netlify.app/img/hp.jpg",
+      "valores": [
+        "Inovação",
+        "Integridade",
+        "Sustentabilidade"
+      ],
+      "produtos": [
+        "Computadores",
+        "Impressoras",
+        "Soluções de impressão"
       ]
     }
   ]

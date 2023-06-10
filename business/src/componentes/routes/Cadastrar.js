@@ -1,29 +1,57 @@
 import style from "./Cadastrar.module.css";
+import { useNavigate } from "react-router-dom";
 import Container from "../layout/Container";
 import Input from "../layout/Input";
-import dblocal from "../bd/db.json";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Message from "../layout/Message";
+import LinkButton from "../layout/LinkButton";
 
-export default function Cadastrar() {
-  // Define o estado inicial do formulário
-  const [formData, setFormData] = useState({
+export default function Cadastrar({ dataId }) {
+  const [mensagem, setMensagem] = useState();
+
+  const [type, setType] = useState();
+  const navigate = useNavigate();
+
+  const [showText, setShowText] = useState(false);
+
+  const [btnText, setBtnTexto] = useState("Enviar");
+  useEffect(() => {
+    document.title = "Cadastrar - BusinessHere";
+  }, []);
+
+  function toogleText() {
+    setShowText((prevState) => !prevState);
+  }
+  const [dataApi, setdataApi] = useState({
     id: "",
-    nome: "",
+    nome: undefined, //mudar quando tiver api rest
     localidade: "",
     site: "",
     setor: "",
     visao: "",
-    Fundador: "",
+    fundador: "",
     anofundação: "",
+    imagem: "",
     valores: "",
     produtos: "",
-    imagem: "",
+  });
+  // Define o estado inicial do formulário
+  const [formData, setFormData] = useState({
+    id: dataId ? dataApi.id : "",
+    nome: dataId ? dataApi.nome : "",
+    localidade: dataId ? dataApi.localidade : "",
+    site: dataId ? dataApi.site : "",
+    setor: dataId ? dataApi.setor : "",
+    visao: dataId ? dataApi.visao : "",
+    fundador: dataId ? dataApi.fundador : "",
+    anofundação: dataId ? dataApi.anofundação : "",
+    imagem: dataId ? dataApi.imagem : "",
+    valores: dataId ? dataApi.valores : "",
+    produtos: dataId ? dataApi.produtos : "",
   });
 
-  const [btnText, setBtnTexto] = useState("Enviar");
-
   // Atualiza o estado do formulário quando um campo é alterado
-  const handleChange = (event) => {
+  function handleChange(event) {
     if (event.target.value === "site") {
       setFormData({ ...formData, [event.target.name]: event.target.value });
     } else {
@@ -32,12 +60,17 @@ export default function Cadastrar() {
         event.target.value.slice(1);
       setFormData({ ...formData, [event.target.name]: capitalizedValue });
     }
-  };
+  }
 
   // Manipula o envio do formulário
-  const handleSubmitForm = async (event) => {
+  async function handleSubmitForm(event) {
     try {
+      // quando tiver apiREST remover esse comentario
+      event.preventDefault();
+      setMensagem("Empresa cadastrada!!!");
+      setType("success");
       setBtnTexto("Enviando...");
+
       // Envia uma requisição POST para a URL especificada
       const response = await fetch("http://localhost:5000/empresas", {
         method: "POST",
@@ -47,22 +80,78 @@ export default function Cadastrar() {
         body: JSON.stringify(formData),
       });
 
-      // Trata a resposta da requisição (pode ser necessário ajustar de acordo com a API)
-      const data = await response.json();
-
       // Atualiza o estado do formulário com os dados recebidos
+
+      const data = await response.json();
       setFormData(data);
-      dblocal.append(formData);
+
+      setTimeout(() => {
+        setMensagem("");
+        setType("");
+        window.location.reload();
+      }, 1500);
     } catch (error) {
       console.log(error);
     }
-  };
+  }
+
+  /**Atualizar  dados*/
+
+  useEffect(() => {
+    if (dataId) {
+      fetch(`http://localhost:5000/empresas/${dataId}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((dataReponse) => {
+          setdataApi(dataReponse);
+        })
+        .catch((err) => console.log(err));
+    }
+  }, [dataId]);
+
+  function editarApi(e) {
+    fetch(`http://localhost:5000/empresas/${dataId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setFormData(data);
+      })
+      .catch((err) => console.log(err));
+  }
 
   return (
     <Container>
       <div className={style.father}>
-        <h1>Cadastre novas empresas</h1>
-        <form onSubmit={handleSubmitForm} className={style.form}>
+        {!dataId && (
+          <section className={style.header}>
+            <div>
+              <h1>Cadastre empresas.</h1>
+              <p>preenchar com todas informações completas.</p>
+            </div>
+            <div>
+              <LinkButton
+                to="/visualizar"
+                text="Empresas"
+                className={style.btnshow}
+              />
+            </div>
+          </section>
+        )}
+
+        {mensagem && <Message type={type} msg={mensagem} />}
+        <form
+          onSubmit={!dataId ? handleSubmitForm : undefined}
+          className={style.form}
+        >
           {/* Componente de entrada de texto para o nome da empresa */}
           <Input
             text="Nome da empresa:"
@@ -70,10 +159,9 @@ export default function Cadastrar() {
             id="nome"
             type="text"
             name="nome"
-            value={formData.nome}
+            value={formData.nome || dataApi.nome}
             handleChange={handleChange}
           />
-
           {/* Componente de entrada de texto para os site */}
           <Input
             text="site:"
@@ -81,10 +169,9 @@ export default function Cadastrar() {
             type="text"
             id="site"
             name="site"
-            value={formData.site}
+            value={formData.site || dataApi.site}
             handleChange={handleChange}
           />
-
           {/* Componente de entrada de texto para o local */}
           <Input
             text="Local:"
@@ -92,10 +179,9 @@ export default function Cadastrar() {
             type="text"
             id="localidade"
             name="localidade"
-            value={formData.localidade}
+            value={formData.localidade || dataApi.localidade}
             handleChange={handleChange}
           />
-
           {/* Componente de entrada de texto para o setor */}
           <Input
             text="Setor:"
@@ -103,10 +189,9 @@ export default function Cadastrar() {
             placeholder="Digite o setor..."
             id="setor"
             name="setor"
-            value={formData.setor}
+            value={formData.setor || dataApi.setor}
             handleChange={handleChange}
           />
-
           {/* Componente de entrada de texto para a visão */}
           <Input
             text="Visão:"
@@ -114,20 +199,17 @@ export default function Cadastrar() {
             placeholder="Digite a visão..."
             id="visao"
             name="visao"
-            value={formData.visao}
+            value={formData.visao || dataApi.visao}
             handleChange={handleChange}
           />
 
-          {/* Componente de entrada de texto para a data de fundação */}
-          {/* arruma esse campo de data e fundador*/}
-
           <Input
-            text="Fundador:"
+            text="fundador:"
             type="text"
             placeholder="Digite o ano da fundação..."
-            id="Fundador"
-            name="Fundador"
-            value={formData.fundada}
+            id="fundador"
+            name="fundador"
+            value={formData.fundador || dataApi.fundador}
             handleChange={handleChange}
           />
           <Input
@@ -136,18 +218,17 @@ export default function Cadastrar() {
             placeholder="Digite o ano da fundação..."
             id="anofundação"
             name="anofundação"
-            value={formData.anofundação}
+            value={formData.anofundação || dataApi.anofundação}
             handleChange={handleChange}
             className={style.data}
           />
-
           <Input
             text="valores:"
             type="text"
             placeholder="Digite os valores..."
             id="valores"
             name="valores"
-            value={formData.valores}
+            value={formData.valores || dataApi.valores}
             handleChange={handleChange}
           />
           <Input
@@ -156,12 +237,42 @@ export default function Cadastrar() {
             placeholder="Digite os produtos..."
             id="produtos"
             name="produtos"
-            value={formData.produtos}
+            value={formData.produtos || dataApi.produtos}
             handleChange={handleChange}
           />
-
+          <Input
+            text="url de imagem:"
+            type="text"
+            placeholder="Digite os imagem..."
+            id="imagem"
+            name="imagem"
+            value={formData.imagem || dataApi.imagem}
+            handleChange={handleChange}
+          />
           {/* Botão de envio do formulário */}
-          <button className={style.btn}>{btnText}</button>
+          {dataId && (
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                toogleText();
+                editarApi();
+                setMensagem("Empresa editada!!!");
+                setType("success");
+                setTimeout(() => {
+                  setMensagem("");
+                  setType("");
+                  navigate(
+                    `/visualizar/${dataId}/${formData.nome || dataApi.nome}`
+                  );
+                  setShowText(false); // Navega para a página anterior
+                }, 1000);
+              }}
+              className={style.btn}
+            >
+              {showText ? "Salvando..." : "Salvar"}
+            </button>
+          )}
+          {!dataId && <button className={style.btn}>{btnText}</button>}
         </form>
       </div>
     </Container>

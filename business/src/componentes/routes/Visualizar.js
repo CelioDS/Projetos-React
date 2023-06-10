@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import style from "./Visualizar.module.css";
+
 import { BsLink } from "react-icons/bs";
+
 import { useEffect, useState, useCallback } from "react";
 import Loading from "../layout/Loading";
+import LinkButton from "../layout/LinkButton";
 import Astronaut from "../img/astronaut.svg";
 import CheckMobile from "../Funcoes/CheckMobile";
 import databaseLocal from "../bd/db.json";
@@ -13,6 +16,10 @@ export default function Visualizar() {
   const checkMobile = useCallback(CheckMobile, []);
   const isMobile = checkMobile();
   const [database, setDatabase] = useState(null); // Estado para armazenar os dados
+
+  useEffect(() => {
+    document.title = "Visualizar - BusinessHere";
+  }, []);
 
   const fetchData = async () => {
     try {
@@ -41,11 +48,19 @@ export default function Visualizar() {
   return (
     <Container>
       <div className={style.father}>
-        <div className={style.texto}>
-          <h1>Empresas cadastradas.</h1>
-          <p>Acesse o link abaixo para ter informações completas.</p>
-          <p>Aqui estão as empresas cadastradas</p>
-        </div>
+        <section className={style.header}>
+          <div>
+            <h1>Empresas cadastradas.</h1>
+            <p>Acesse o link abaixo para ter informações completas.</p>
+          </div>
+          <div>
+            <LinkButton
+              to="/cadastrar"
+              text="Cadastrar"
+              className={style.btnshow}
+            />
+          </div>
+        </section>
 
         {database ? ( // Se os dados foram obtidos com sucesso
           <div className={style.tablediv}>
@@ -64,6 +79,7 @@ export default function Visualizar() {
                     <td>{id}</td>
                     <td>
                       <Link
+                        className={style.linkName}
                         to={`/visualizar/${id}/${nome}`}
                         key={id}
                         title="Acesse aqui"
@@ -80,11 +96,11 @@ export default function Visualizar() {
               </tbody>
             </table>
 
-            <h1>
-              <img src={Astronaut} alt="figurinha" />
-            </h1>
             {database.length === 0 && (
               <>
+                <h1>
+                  <img src={Astronaut} alt="figurinha" />
+                </h1>
                 <p>Sem cadastros...</p> <Loading />
               </>
             )}

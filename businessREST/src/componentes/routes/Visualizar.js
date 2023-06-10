@@ -1,20 +1,25 @@
 import { Link } from "react-router-dom";
 import style from "./Visualizar.module.css";
-import { BsLink, BsClipboardCheck } from "react-icons/bs";
-import { useEffect, useState } from "react";
+
+import { BsLink } from "react-icons/bs";
+
+import { useEffect, useState, useCallback } from "react";
 import Loading from "../layout/Loading";
-import ContatosMascara from "../mascara/ContatosMascara";
-import databaseLocal from "../bd/databaseLocal.json";
+import Astronaut from "../img/astronaut.svg";
+import CheckMobile from "../Funcoes/CheckMobile";
+import databaseLocal from "../bd/db.json";
+
 import Container from "../layout/Container";
 
 export default function Visualizar() {
-  const [copy, setCopy] = useState("Copiar");
+  const checkMobile = useCallback(CheckMobile, []);
+  const isMobile = checkMobile();
   const [database, setDatabase] = useState(null); // Estado para armazenar os dados
 
   const fetchData = async () => {
     try {
       const url =
-        process.env.REACT_APP_API_URL || "http://localhost:5000/usuarios";
+        process.env.REACT_APP_API_URL || "http://localhost:5000/empresas";
 
       const response = await fetch(url, {
         method: "GET",
@@ -27,21 +32,13 @@ export default function Visualizar() {
       setDatabase(data);
     } catch (error) {
       //console.log("Erro ao obter os dados", error);
-      setDatabase(databaseLocal.usuarios);
+      setDatabase(databaseLocal.empresas);
     }
   };
 
   useEffect(() => {
     fetchData();
   }, []);
-
-  const handleCopy = (text) => {
-    navigator.clipboard.writeText(text);
-    setCopy("Copiando...");
-    setTimeout(() => {
-      setCopy("Copiar");
-    }, 500);
-  };
 
   return (
     <Container>
@@ -59,13 +56,12 @@ export default function Visualizar() {
                 <tr>
                   <th>Id</th>
                   <th>Nomes</th>
-                  <th>Localidade</th>
+                  {!isMobile && <th>Localidade</th>}
                   <th>Setor</th>
-                  <th>Contatos</th>
                 </tr>
               </thead>
               <tbody>
-                {database.map(({ id, nome, localidade, contatos, setor }) => (
+                {database.map(({ id, nome, localidade, setor }) => (
                   <tr key={id}>
                     <td>{id}</td>
                     <td>
@@ -78,24 +74,19 @@ export default function Visualizar() {
                         {nome}
                       </Link>
                     </td>
-                    <td>{localidade}</td>
+                    {!isMobile && <td>{localidade}</td>}
+
                     <td>{setor}</td>
-                    <td className={style.contatos}>
-                      {ContatosMascara(contatos)}
-                      <button
-                        className={style.btn}
-                        onClick={() => handleCopy(contatos)}
-                      >
-                        <p className={style.copy}>{copy}</p>
-                        <BsClipboardCheck />
-                      </button>
-                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
+
             {database.length === 0 && (
               <>
+                <h1>
+                  <img src={Astronaut} alt="figurinha" />
+                </h1>
                 <p>Sem cadastros...</p> <Loading />
               </>
             )}
