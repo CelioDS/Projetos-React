@@ -194,7 +194,7 @@ export default function VisualizarDB() {
                         </section>
                       </main>
                     ) : (
-                      <Cadastrar database={database} />
+                      <Cadastrar getDataBase={database} />
                     )}
                   </section>
                 );

@@ -1,5 +1,5 @@
 import style from "./Cadastrar.module.css";
-//import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Container from "../layout/Container";
 import Input from "../layout/Input";
 import { useState, useEffect, useRef } from "react";
@@ -8,37 +8,36 @@ import LinkButton from "../layout/LinkButton";
 import { toast } from "react-toastify";
 import axios from "axios";
 
-export default function Cadastrar({ database }) {
+export default function Cadastrar({ getDataBase }) {
   const ref = useRef();
-
-  //const navigate = useNavigate();
-
+  const navigate = useNavigate();
+  const [nomeDB, setNomeDB] = useState(getDataBase && getDataBase[0].nome);
   const [showText, setShowText] = useState(false);
+  const [btnText, setBtnText] = useState("Enviar");
 
-  const [btnText, setBtnTexto] = useState("Enviar");
   useEffect(() => {
     document.title = "Cadastrar - BusinessHere";
   }, []);
 
+  useEffect(() => {
+    const user = ref.current;
+    if (getDataBase) {
+      user.nome.value = getDataBase[0].nome;
+      user.localidade.value = getDataBase[0].localidade;
+      user.site.value = getDataBase[0].site;
+      user.setor.value = getDataBase[0].setor;
+      user.visao.value = getDataBase[0].visao;
+      user.fundador.value = getDataBase[0].fundador;
+      user.anofundacao.value = getDataBase[0].anofundacao;
+      user.imagem.value = getDataBase[0].imagem;
+      user.valores.value = getDataBase[0].valores;
+      user.produtos.value = getDataBase[0].produtos;
+    }
+  }, [getDataBase]);
+
   function toogleText() {
     setShowText((prevState) => !prevState);
   }
-
-  useEffect(() => {
-    const user = ref.current;
-    if (database) {
-      user.nome.value = database[0].nome;
-      user.localidade.value = database[0].localidade;
-      user.site.value = database[0].site;
-      user.setor.value = database[0].setor;
-      user.visao.value = database[0].visao;
-      user.fundador.value = database[0].fundador;
-      user.anofundacao.value = database[0].anofundacao;
-      user.imagem.value = database[0].imagem;
-      user.valores.value = database[0].valores;
-      user.produtos.value = database[0].produtos;
-    }
-  }, [database]);
 
   // Manipula o envio do formulário
   async function handleSubmitForm(event) {
@@ -50,9 +49,9 @@ export default function Cadastrar({ database }) {
       return toast.warn("Preencha todos os campos!!!");
     }
 
-    if (database) {
+    if (getDataBase) {
       await axios
-        .put("http://localhost:8800/" + database[0].id, {
+        .put("http://localhost:8800/" + getDataBase[0].id, {
           nome: user.nome.value,
           localidade: user.localidade.value,
           site: user.site.value,
@@ -94,47 +93,37 @@ export default function Cadastrar({ database }) {
     user.imagem.value = "";
     user.valores.value = "";
     user.produtos.value = "";
-    setBtnTexto("Enviando...");
-    database = null;
+    setBtnText("Enviando...");
+    getDataBase = null;
   }
 
-  /**Atualizar  dados*/ // SHIFT + ALT + A
-  /* 
-  useEffect(() => {
-    if (database) {
-      fetch(`http://localhost:5000/empresas/${database}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
+  async function editarApi(e) {
+    const user = ref.current;
+    await axios
+      .put("http://localhost:8800/" + getDataBase[0].id, {
+        nome: user.nome.value,
+        localidade: user.localidade.value,
+        site: user.site.value,
+        setor: user.setor.value,
+        visao: user.visao.value,
+        fundador: user.fundador.value,
+        anofundacao: user.anofundacao.value,
+        imagem: user.imagem.value,
+        valores: user.valores.value,
+        produtos: user.produtos.value,
       })
-        .then((response) => response.json())
-        .then((dataReponse) => {
-          setdataApi(dataReponse);
-        })
-        .catch((err) => console.log(err));
-    }
-  }, [database]);
+      .then(({ data }) => toast.success(data))
+      .catch(({ data }) => toast.error(data));
+  }
 
-  function editarApi(e) {
-    fetch(`http://localhost:5000/empresas/${database}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setFormData(data);
-      })
-      .catch((err) => console.log(err));
-  } */
+  function handleChange(e) {
+    setNomeDB(e.target.value);
+  }
 
   return (
     <Container>
       <div className={style.father}>
-        {!database && (
+        {!getDataBase && (
           <section className={style.header}>
             <div>
               <h1>Cadastre empresas.</h1>
@@ -152,7 +141,7 @@ export default function Cadastrar({ database }) {
 
         <form
           ref={ref}
-          onSubmit={!database ? handleSubmitForm : undefined}
+          onSubmit={!getDataBase ? handleSubmitForm : undefined}
           className={style.form}
         >
           {/* Componente de entrada de texto para o nome da empresa */}
@@ -162,6 +151,8 @@ export default function Cadastrar({ database }) {
             id="nome"
             type="text"
             name="nome"
+            value={getDataBase && nomeDB}
+            onChange={handleChange}
           />
           {/* Componente de entrada de texto para os site */}
           <Input
@@ -233,27 +224,24 @@ export default function Cadastrar({ database }) {
             name="imagem"
           />
           {/* Botão de envio do formulário */}
-          {database && (
+          {getDataBase && (
             <button
               onClick={(e) => {
                 e.preventDefault();
                 toogleText();
-                // editarApi();
-
-                // setTimeout(() => {
-
-                // navigate(
-                //   `/visualizar/${database}/${formData.nome || dataApi.nome}`
-                // );
-                // setShowText(false); // Navega para a página anterior
-                // }, 1000);
+                editarApi();
+                navigate(`/visualizar/${getDataBase[0].id}/${nomeDB}`);
+                setTimeout(() => {
+                  setShowText(false); // Navega para a página anterior
+                  window.location.reload();
+                }, 1500);
               }}
               className={style.btn}
             >
               {showText ? "Salvando..." : "Salvar"}
             </button>
           )}
-          {!database && <button className={style.btn}>{btnText}</button>}
+          {!getDataBase && <button className={style.btn}>{btnText}</button>}
         </form>
       </div>
     </Container>

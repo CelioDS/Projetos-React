@@ -34,7 +34,7 @@ export default function Footer() {
           direitos reservados
         </p>
         <a
-          href="https://multiversion.tech/"
+          href="https://celiotech.netlify.app/"
           target="_blank"
           rel="noopener noreferrer"
         >

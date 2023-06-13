@@ -15,7 +15,7 @@ function App() {
       <NavBar />
 
       <Outlet />
-      <ToastContainer autoClose={3000} position={toast.POSITION.BOTTOM_LEFT} />
+      <ToastContainer pauseOnHover={false} autoClose={3000} position={toast.POSITION.TOP_RIGHT} />
       <Footer />
     </div>
   );

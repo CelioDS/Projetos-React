@@ -6,8 +6,8 @@ export default function Input({
   name,
   placeholder,
   value,
-
   className,
+  onChange,
 }) {
   return (
     <div className={style.father}>
@@ -19,7 +19,7 @@ export default function Input({
         placeholder={placeholder}
         value={value}
         className={className}
-    
+        onChange={onChange}
       />
     </div>
   );
@@ -28,4 +28,5 @@ export default function Input({
 Input.defaultProps = {
   //valores padroa
   className: style.father,
+
 };

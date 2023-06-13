@@ -30,6 +30,15 @@ export default function Visualizar() {
     try {
       const res = await axios.get("http://localhost:8800");
       setArrayBd(res.data.sort((a, b) => (a.nome > b.nome ? 1 : -1)));
+      toast.success("Api funcionando!", {
+        position: "bottom-right", // Define a posição do toast (por exemplo, no canto superior direito)
+        autoClose: 5, // Define a duração do toast em milissegundos (por exemplo, 3000 = 3 segundos)
+        hideProgressBar: false, // Define se a barra de progresso deve ser ocultada
+        closeOnClick: true, // Define se o toast deve ser fechado ao clicar nele
+        pauseOnHover: false, // Define se a contagem regressiva do tempo deve ser pausada ao passar o mouse sobre o toast
+        draggable: true, // Define se o toast pode ser arrastado
+        progress: undefined, // Permite personalizar a barra de progresso
+      });
     } catch (error) {
       toast.error(error);
     }
