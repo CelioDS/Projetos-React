@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+body {
+  background-color: #f8f7f7;
+}
+
+*::first-letter {
+  text-transform: capitalize;
+}
+p::first-letter {
+  padding-left: 15px;
+}
+
+p {
+  font-size: 15px;
+  font-size: clamp(14px, 15px, 16px);
+}
+
+h1 {
+  font-size: 25px;
+  font-size: clamp(20px, 25px, 30px);
+}

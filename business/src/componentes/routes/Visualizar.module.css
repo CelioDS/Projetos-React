@@ -73,6 +73,7 @@
   text-align: start;
   margin-bottom: 50px;
   overflow-x: scroll; /* Adiciona uma barra de rolagem horizontal quando necessário */
+  word-break: break-all; /* Quebra as palavras*/
 }
 .father table td {
   height: 35px;

@@ -3,6 +3,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "poppins", "sans-serif";
+  font-size: clamp(14px, 15px, 16px);
+  word-break: break-all; /*Quebra as letras caso seja menor*/
 }
 body {
   width: 100vw;

@@ -1,13 +1,44 @@
+:root {
+  --colorbtn: #a09d9d;
+  --backbtn: #3b3939;
+}
+
 .Form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 15px;
+  max-width: 860px;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #ff0000;
+}
+
+.Form > div {
+  background-color: rgb(143, 141, 141);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+.Form > button {
+  padding: 8px 16px;
+  cursor: pointer;
+  background-color: var(--backbtn);
+  color: var(--colorbtn);
+  border: none;
+}
+.Form > button:hover {
+  background-color: var(--colorbtn);
+  color: var(--backbtn);
+}
+.Form > div > input {
+  width: 200px;
+}
 
-.Form > div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.Form > div > label::first-letter {
+  text-transform: capitalize;
 }

@@ -1,0 +1,19 @@
+.table {
+  word-break: break-all; /*Quebra as letras caso seja menor*/
+  width: 100%;
+}
+.table thead {
+  word-break: break-all; /*Quebra as letras caso seja menor*/
+  text-align: end;
+  align-items: end;
+}
+.table tbody {
+  word-break: break-all; /*Quebra as letras caso seja menor*/
+
+  text-align: end;
+  align-items: end;
+}
+
+.table thead th::first-letter {
+  text-transform: capitalize;
+}
