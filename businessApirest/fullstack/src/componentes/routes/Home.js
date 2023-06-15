@@ -71,7 +71,7 @@ export default function Home() {
 
         {bussinessRandom && (
           <>
-            <h1 className={style.nome}>Sugestao de empresa para conhecer</h1>
+            <h3 className={style.nome}>Sugestao de empresa para conhecer</h3>
 
             <div
               className={style.bussinessRandom}

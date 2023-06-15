@@ -83,6 +83,7 @@ export default function Visualizar() {
                         to={`/visualizar/${id}/${nome}`}
                         key={id}
                         title="Acesse aqui"
+                        aria-label={`Acesse ${nome}`}
                       >
                         <BsLink className={style.icon} title="Acesse aqui" />
                         {nome}
