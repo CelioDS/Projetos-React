@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.70825845.css",
+    "main.js": "/static/js/main.c3977ff5.js",
+    "static/media/empresas.png": "/static/media/empresas.6d2b1dfc2902b44a391c.png",
+    "static/media/astronaut.svg": "/static/media/astronaut.667d733a3563e6ac33d08421e1feba77.svg",
+    "index.html": "/index.html",
+    "static/media/loading.svg": "/static/media/loading.d5591cbf59dfaf43fd97c4bc3f3d3e1d.svg",
+    "main.70825845.css.map": "/static/css/main.70825845.css.map",
+    "main.c3977ff5.js.map": "/static/js/main.c3977ff5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.70825845.css",
+    "static/js/main.c3977ff5.js"
+  ]
+}
