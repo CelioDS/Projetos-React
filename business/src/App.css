@@ -17,10 +17,10 @@ p::first-letter {
 
 p {
   font-size: 15px;
-  font-size: clamp(14px, 15px, 16px);
+  font-size: clamp(14px, 5vw, 16px);
 }
 
 h1 {
   font-size: 25px;
-  font-size: clamp(20px, 25px, 30px);
+  font-size: clamp(20px, 5vw, 30px);
 }
