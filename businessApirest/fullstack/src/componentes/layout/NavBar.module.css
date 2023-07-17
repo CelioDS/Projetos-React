@@ -37,14 +37,11 @@ nav > ul > a {
   list-style: none;
   font-weight: normal;
   padding: 8px 16px;
-  border-radius: 8px;
   color: #ffffff;
   position: relative;
   overflow: hidden;
 }
-nav > ul > a:hover {
-  color: #ff9900 !important ;
-}
+
 nav > ul > a:hover:before {
   content: "";
   position: absolute;

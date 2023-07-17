@@ -69,9 +69,9 @@
   width: 96%;
   margin: 0 auto;
   color: #ffffff;
-  border-collapse: collapse; /* Remove a separação entre as células da tabela */
   text-align: start;
   margin-bottom: 50px;
+  border-collapse: collapse; /* Remove a separação entre as células da tabela */
   overflow-x: scroll; /* Adiciona uma barra de rolagem horizontal quando necessário */
   word-break: break-all; /* Quebra as palavras*/
 }

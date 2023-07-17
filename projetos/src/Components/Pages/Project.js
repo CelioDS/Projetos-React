@@ -13,7 +13,8 @@ import { useState, useEffect } from "react";
 export default function Project() {
   // pega o parâmetro "id" da URL
   const { id } = useParams();
-
+  const [mensagem, setMensagem] = useState();
+  const [type, setType] = useState();
   // estado que armazena os dados do projeto
   const [project, setProject] = useState([]);
   const [services, setServices] = useState([]);
@@ -38,9 +39,6 @@ export default function Project() {
 
   // estado que controla a exibição do formulário de edição do projeto
   const [showProjectForm, setShowProjectForm] = useState(false);
-
- 
-  
 
   // função que valida o orçamento e faz a requisição PATCH para atualizar o projeto na API
   function editPost(project) {
@@ -68,7 +66,30 @@ export default function Project() {
       .catch((err) => console.log(err));
   }
 
-  function removeService() {}
+  function removeService(id, cost) {
+    const serviceUpdate = project.services.filter(
+      (service) => service.id !== id
+    );
+
+    const projectUpdate = project;
+
+    projectUpdate.services = serviceUpdate;
+    projectUpdate.cost = parseFloat(projectUpdate.cost) - parseFloat(cost);
+
+    fetch(`http://localhost:5000/projects/${projectUpdate.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(projectUpdate.id),
+    })
+      .then((data) => {
+        setProject(projectUpdate);
+        setServices(projectUpdate)
+        setMensagem("Serviço removido com sucesso..")
+      })
+      .catch((err) => console.log(err));
+  }
 
   // função que alterna a exibição do formulário de edição do projeto
   function toogleProjectForm() {

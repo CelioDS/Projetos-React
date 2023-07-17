@@ -1,0 +1,36 @@
+.btn {
+  padding: 8px 15px;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  margin-top: 30px;
+
+  text-decoration: 1px underline #ff9900;
+  color: #1f1e1d;
+}
+
+.btn:hover:before {
+  content: "";
+  text-align: center;
+  position: absolute;
+  bottom: 2px;
+  left: -100%;
+  width: 5px;
+  height: 5px;
+  animation: hoverButton 1s linear infinite;
+  z-index: 1;
+  transform: rotate(-45deg);
+  border-left: 2px solid #ff9900;
+  border-top: 2px solid #ff9900;
+}
+
+@keyframes hoverButton {
+  from {
+    left: 100%;
+  }
+
+  to {
+    left: -100%;
+  }
+}

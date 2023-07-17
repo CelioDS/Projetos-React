@@ -53,7 +53,7 @@ export default function Home() {
               Conheça as empresas cadastradas e descubrar mais sobre elas e seus
               negocios.
               <br />
-              Aqui voce consegue descobrir, um pouco das grandeza das empresas e
+              Aqui voce consegue descobrir, um pouco das grandezas das empresas e
               suas importancia para tudo que temos hoje.
               <br />
               <LinkButton
@@ -67,6 +67,26 @@ export default function Home() {
           <div>
             <img src={ImgE} alt="imagem de empresas" />
           </div>
+
+          <h2>O que é a Meta de uma empresa?</h2>
+          <p>
+            A Meta de uma empresa é uma declaração que define seu propósito
+            principal, o que ela faz e quem ela atende. Ela resume o motivo pelo
+            qual a empresa existe e o valor que ela busca entregar aos seus
+            clientes. A Meta pode descrever os produtos ou serviços oferecidos,
+            o público-alvo e os objetivos a serem alcançados.
+          </p>
+
+          <h2>O que é a Visão de uma empresa?</h2>
+          <p>
+            A Visão de uma empresa é uma declaração que descreve a imagem de
+            longo prazo que a empresa deseja alcançar. Ela representa o estado
+            futuro desejado da empresa e os objetivos de longo prazo que ela
+            busca alcançar. A Visão é inspiradora e reflete os valores, a
+            cultura e os ideais pelos quais a empresa se esforça. Ela orienta a
+            direção estratégica da empresa e fornece um senso de propósito e
+            direção.
+          </p>
         </section>
 
         {bussinessRandom && (
@@ -78,8 +98,7 @@ export default function Home() {
               style={{
                 backgroundImage: `url(${bussinessRandom.imagem})`,
                 backgroundAttachment: "fixed",
-
-                backgroundSize: "50%", // Porcentagem ou outro valor válido
+                backgroundSize: "100%", // Porcentagem ou outro valor válido
               }}
             >
               <p>
@@ -106,12 +125,7 @@ export default function Home() {
         )}
 
         <p className={style.text}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis
-          doloribus impedit dicta deleniti similique officia odio ratione, illo
-          voluptatum? Blanditiis eaque at sequi voluptas, minima ducimus itaque
-          soluta ex nisi alias id fugit dignissimos! Nulla saepe, maiores esse
-          molestias quo commodi porro? Neque fugit, tempore omnis necessitatibus
-          eaque molestias aut.
+         
         </p>
 
         {!cumprimentoSession && (

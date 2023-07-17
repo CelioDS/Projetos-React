@@ -1,26 +1,22 @@
 {
   "projects": [
     {
-      "name": "Jogo trol",
-      "budget": "30001",
-      "category": {
-        "id": "4",
-        "name": "Planejamento"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 2
-    },
-    {
-      "name": "Site 1 profiss",
-      "budget": "12000",
+      "name": "Teste",
+      "budget": "1000",
       "category": {
         "id": "2",
         "name": "Desenvolvimento"
       },
-      "cost": 0,
-      "services": [],
-      "id": 3
+      "cost": 500,
+      "services": [
+        {
+          "name": "teste",
+          "cost": "500",
+          "description": "teste",
+          "id": "a45f8fb6-3253-4985-9541-2ed72be79e68"
+        }
+      ],
+      "id": 1
     }
   ],
   "categorias": [

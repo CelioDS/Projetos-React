@@ -1,0 +1,150 @@
+.father {
+  min-height: calc(100vh - 135px);
+  text-align: center;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.father h1 {
+  padding: 30px;
+  text-align: center;
+  color: #1f1e1d;
+}
+.father p {
+  text-align: start;
+  color: #6b5e5e;
+  padding: 15px;
+}
+.father .header {
+  display: grid;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-area: 100px;
+  gap: 10px;
+  text-align: center;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center;
+}
+
+.father .header > div {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.father .header > div > p {
+  margin: 50px 0;
+  border-radius: 8px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.text {
+  columns: auto 10rem;
+}
+
+.father .header > div > img {
+  margin: 50px 0;
+  border-radius: 8px;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  transition: all 2s;
+  user-select: none;
+  animation: color-rotate 2s infinite alternate;
+  background-color: #000000;
+}
+
+.father .btn {
+  position: absolute;
+  padding: 15px;
+  right: 0;
+  font-size: 20px;
+}
+
+.bussinessRandom {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+  box-sizing: border-box;
+  background-color: #f1f2f3;
+  padding-top: 15px;
+  width: 100%;
+  max-width: 80%;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.bussinessRandom .nome {
+  position: absolute;
+  top: 0;
+
+}
+.bussinessRandom p {
+  text-align: center;
+}
+.bussinessRandom p span {
+  color: #ff8000;
+}
+.bussinessRandom p:nth-child(5) {
+  grid-column: 1 / span 2;
+}
+
+@media (max-width: 900px) {
+  .bussinessRandom p:nth-child(5) {
+    grid-column: 1 / span 1;
+  }
+}
+
+.bussinessRandom > p {
+  animation: slide 3s ease-in-out infinite;
+  position: relative;
+  width: 250px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+    filter: drop-shadow(1px 1px 10px #000000);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.father .logo {
+  display: flex;
+  position: relative;
+  width: 70px;
+  height: 200px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.father .logo:hover {
+  animation: color-rotate 2s infinite linear;
+}
+
+@keyframes color-rotate {
+  from {
+    filter: hue-rotate(0deg);
+
+    filter: drop-shadow(5px 5px 5px rgb(255, 0, 0));
+  }
+  to {
+    filter: hue-rotate(360deg);
+
+    filter: drop-shadow(5px 5px 5px rgb(0, 4, 255));
+  }
+}
