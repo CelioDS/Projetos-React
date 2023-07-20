@@ -1,0 +1,180 @@
+:root {
+  --paddindTabela: 15px;
+}
+
+.father {
+  text-align: center;
+  width: 100%;
+  height: auto;
+  min-height: calc(100vh - 135px);
+  padding-bottom: 50px;
+}
+.father .header {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+  align-items: center;
+  min-height: 17.8vh;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 900px) {
+  .father .header {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
+}
+
+.father .header div:nth-child(1) {
+  color: rgb(148, 146, 146);
+  text-align: center;
+  word-break: break-all;
+}
+
+.father > .header > div h1 {
+  color: #1f1e1d;
+  font-size: 25px;
+  font-size: clamp(20px, 25px, 30px);
+  text-align: center;
+}
+.father > .header > div p {
+  font-size: clamp(14px, 15px, 16px);
+  word-break: break-all;
+}
+
+.father > .header > div .btnshow {
+  color: #999595;
+  background-color: #413e3e;
+  padding: 10px 8px;
+  width: 100px;
+  text-decoration: none;
+}
+.father > .header > div .btnshow:hover {
+  color: #413e3e;
+  background-color: #999595;
+}
+
+.father .linkName {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 10px;
+  font-weight: bolder;
+  color: #1f1e1d;
+  text-decoration: none;
+}
+
+.father .linkName:hover {
+  filter: drop-shadow(1px 1px 1px #ff6600);
+}
+.father .linkName > .icon {
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-weight: bolder;
+  filter: drop-shadow(1px 1px 1px #ff6600);
+}
+
+/* tabela  */
+
+.father table {
+  width: 96%;
+  margin: 0 auto;
+  color: #ffffff;
+  border-collapse: collapse; /* Remove a separação entre as células da tabela */
+  text-align: start;
+  margin-bottom: 50px;
+  overflow-x: scroll; /* Adiciona uma barra de rolagem horizontal quando necessário */
+}
+.father table td {
+  height: 35px;
+  color: #807b7b;
+  padding: 0 var(--paddindTabela);
+  word-break: break-all;
+}
+
+.father table th {
+  background-color: #18181d;
+  height: 50px;
+  font-weight: bolder;
+  text-align: justify;
+  padding: 0 var(--paddindTabela);
+}
+
+.father table tr:nth-child(even) {
+  background-color: rgb(191, 197, 157);
+}
+.father table tr:nth-child(odd) {
+  background-color: rgb(233, 238, 207);
+}
+
+.id {
+  font-size: bolder;
+  font-size: 12px;
+  width: 2ch;
+}
+
+.Astronaut {
+  animation: rotate 3s infinite linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotatey(0deg);
+  }
+  to {
+    transform: rotatey(-360deg);
+  }
+}
+/***
+
+// tabela
+
+
+.site {
+  display: flex;
+  position: relative;
+  align-items: start;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: normal !important;
+  color: #6b6a6a !important;
+}
+.site > a {
+  font-weight: normal !important;
+  border: none !important;
+  filter: none !important;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: #424242;
+  border: transparent;
+  border-radius: 3px;
+  cursor: pointer;
+  filter: drop-shadow(2px 2px 2px #000000);
+}
+.copy {
+  display: none;
+  position: absolute;
+  top: -25px;
+  right: 20px;
+  z-index: 100;
+  background-color: #1f1e1d;
+  padding: 5px;
+  border-radius: 8px;
+  filter: drop-shadow(3px 3px 3px #ff730091);
+}
+.btn:hover > .copy {
+  display: flex;
+}
+
+.btn:hover {
+  filter: drop-shadow(2px 2px 2px #ff730091);
+  color: #ff730091;
+  background-color: #1f1e1d;
+}
+
+
+********/
