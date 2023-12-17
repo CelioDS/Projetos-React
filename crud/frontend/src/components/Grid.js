@@ -6,6 +6,7 @@ import style from "./Grid.module.css";
 export default function Grid({ arrayBd, setArrayBd, setUserEdit }) {
   async function handleEdite(usuario) {
     setUserEdit(usuario);
+    console.log(usuario);
   }
 
   async function handleDelete(id) {
